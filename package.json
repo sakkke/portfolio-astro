@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/sakkke/portfolio-astro#readme",
   "dependencies": {
-    "astro": "^1.6.2"
+    "astro": "^1.6.2",
+    "marked": "^4.2.0"
   }
 }
