@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sakkke/portfolio-astro/issues"
   },
-  "homepage": "https://github.com/sakkke/portfolio-astro#readme"
+  "homepage": "https://github.com/sakkke/portfolio-astro#readme",
+  "dependencies": {
+    "astro": "^1.6.2"
+  }
 }
