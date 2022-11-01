@@ -1,0 +1,8 @@
+---
+import { marked } from 'marked'
+
+const res = await fetch('https://raw.githubusercontent.com/sakkke/sakkke/main/README.md');
+const text = await res.text();
+const html = marked.parse(text);
+---
+<article set:html={html} />
