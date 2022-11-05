@@ -1,6 +1,62 @@
-<header>
-  <h1>I'm Konosuke.</h1>
-</header>
+<div class="container">
+  <header>
+    <h1>I'm Konosuke.</h1>
+  </header>
+  <div class="nav-container">
+    <nav>
+      <h2>Projects</h2>
+      <p id="project-list" />
+      <p>
+        <a href="">See all projects</a>
+      </p>
+    </nav>
+  </div>
+</div>
+<script>
+  const CATPPUCCIN_LATTE_GITHUB_README_STATS_PARAM = '&bg_color=eff1f5&text_color=4c4f69&icon_color=8839ef&title_color=179299';
+  const GITHUB_README_STATS_HOST = 'https://github-readme-stats.vercel.app';
+
+  const projects = [
+    // ['username', 'repo', 'kind'],
+    ['sakkke', 'better', 'linux'],
+    ['sakkke', 'vfzf', 'v'],
+    ['sakkke', 'v_package_template', 'v'],
+    ['sakkke', 'portfolio-astro', 'web'],
+    // ['sakkke', 'inkscape-work', 'art'],
+    ['catppuccin', 'tabby', 'catppuccin'],
+    ['catppuccin', 'zutty', 'catppuccin'],
+    // ['sakkke', 'setup-wizard-pop-os', 'document'],
+    // ['sakkke', 'run-game', 'game'],
+    // ['sakkke', 'run-game-server', 'game'],
+    // ['sakkke', 'afw', 'linux'],
+    // ['sakkke', 'alpine-red', 'linux'],
+    // ['sakkke', 'elemlinux', 'linux'],
+    // ['sakkke', 'icy-scripts', 'linux'],
+    // ['sakkke', 'muos', 'linux'],
+    // ['sakkke', 'popwand-linux', 'linux'],
+    // ['sakkke', 'quilt', 'linux'],
+    // ['sakkke', 'shoot', 'linux'],
+    // ['sakkke', 'suily', 'linux'],
+    // ['sakkke', 'termy', 'linux'],
+    // ['sakkke', 'clock', 'web'],
+    // ['sakkke', 'muldict', 'web'],
+    // ['sakkke', 'multidict', 'web'],
+    // ['sakkke', 'sakkke-site', 'web'],
+    // ['sakkke', 'catppuccin-vite-vue-open-props-template', 'template'],
+  ];
+
+  const projectList = document.getElementById('project-list');
+  const params = `${CATPPUCCIN_LATTE_GITHUB_README_STATS_PARAM}`;
+
+  for (const [username, repo] of projects) {
+    const a = document.createElement('a');
+    a.href = `https://github.com/${username}/${repo}`
+    const img = document.createElement('img');
+    img.src = `${GITHUB_README_STATS_HOST}/api/pin/?username=${username}&repo=${repo}${params}`;
+    a.appendChild(img);
+    projectList.appendChild(a);
+  }
+</script>
 <style>
   h1 {
     color: #eff1f5;
@@ -9,7 +65,26 @@
   header {
     background-color: #209fb5;
     display: grid;
+    flex: 1e5 1 calc(400px + 4rem);
     height: 100vh;
     place-items: center;
+  }
+
+  nav {
+    max-width: 38rem;
+    padding: 2rem;
+    margin: auto;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .nav-container {
+    background-color: #e6e9ef;
+    flex: 1 1 calc(400px + 4rem);
+    height: 100vh;
+    overflow-y: auto;
   }
 </style>
