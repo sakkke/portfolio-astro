@@ -64,11 +64,16 @@
     a.href = `https://github.com/${username}/${repo}`;
     const img = document.createElement('img');
     img.src = `${GITHUB_README_STATS_HOST}/api/pin/?username=${username}&repo=${repo}${params}`;
+    img.classList.add('project-img')
     a.appendChild(img);
     projectList.appendChild(a);
   }
 </script>
 <style>
+  :global(.project-img) {
+    max-width: 100%;
+  }
+
   h1 {
     color: #eff1f5;
   }
