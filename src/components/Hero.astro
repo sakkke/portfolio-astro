@@ -61,7 +61,7 @@
 
   for (const [username, repo] of projects) {
     const a = document.createElement('a');
-    a.href = `https://github.com/${username}/${repo}`
+    a.href = `https://github.com/${username}/${repo}`;
     const img = document.createElement('img');
     img.src = `${GITHUB_README_STATS_HOST}/api/pin/?username=${username}&repo=${repo}${params}`;
     a.appendChild(img);
